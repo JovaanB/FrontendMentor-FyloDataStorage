@@ -1,31 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Fylo data storage component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Fylo data storage component</title>
 
-  You’ve used 815 GB of your storage
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
-  185 GB Left
-  
-  0 GB
-  1000 GB
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      html {
+        margin: 0;
+        height: 100vh;
+        background: hsl(229, 57%, 11%) url("./images/bg-desktop.png") bottom / contain no-repeat;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        color: white;
+      }
+
+      .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: 30vh;
+      }
+
+      .left-component {
+        background-color: hsl(228, 56%, 26%);
+        width: 12vw;
+        padding: 5vh 3vw;
+        margin-right: 30px;
+        border-radius: 10px 90px 10px 10px;
+      }
+
+      .icons img {
+        height: 12px;
+        padding: 8px;
+        background-color:  hsl(229, 57%, 11%);
+        border-radius: 5px;
+        margin-right: 7px;
+        margin-top: 20px;
+      }
+
+      .right-component {
+         background-color: hsl(228, 56%, 26%);
+        width: 30vw;
+        height: 50px;
+        padding: 5vh 3vw;
+        border-radius: 10px 10px 10px 10px;
+      }
+
+      .right-component progress {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .right-component progress#storage {
+        color: red;
+      }
+
+      .weight700 {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-content">
+    <div class="left-component">
+      <img src="./images/logo.svg" alt="logo" />
+      <div class="icons">
+        <img src="./images/icon-document.svg" alt="document-icon" />
+        <img src="./images/icon-folder.svg" alt="folder-icon" />
+        <img src="./images/icon-upload.svg" alt="upload-icon" />
+      </div>
+    </div>
+    <div class="right-component">
+      <p>You’ve used <span class="weight700">815 GB</span> of your storage</p>
+      <progress id="storage" value="815" max="1000">32%</progress>
+      <div class="storage-left">
+        185
+        <span>GB LEFT</span>
+      </div>
+      <p class="start-progress weight700">0 GB</p>
+      <p class="end-progress weight700">1000 GB</p>
+    </div>
+    </div>
+  </body>
 </html>
